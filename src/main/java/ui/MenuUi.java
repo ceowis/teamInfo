@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MenuUi extends AbstractUiTemplate{
+
     private SelectTeamUi selectTeamUi;
 
     public void setSelectTeamUi(SelectTeamUi selectTeamUi) {
