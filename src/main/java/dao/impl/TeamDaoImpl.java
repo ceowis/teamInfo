@@ -32,7 +32,8 @@ public class TeamDaoImpl extends JdbcDaoSupport implements TeamDao {
 
     //RowMapper 인터페이스의 구현클래스인 TeamRowMapper
     protected class TeamRowMapper implements RowMapper {
-
+        
+        //ResultSet에서 쿼리문의 수행결과를 얻어와서 Team 오브젝트에 채움
         private List teamList = new ArrayList();
 
         public List getTeamList(){

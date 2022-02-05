@@ -6,7 +6,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MenuUi extends AbstractUiTemplate{
 
     private SelectTeamUi selectTeamUi;
+    private InsertPlayerUi insertPlayerUi;
 
+    public void setInsertPlayerUi(InsertPlayerUi insertPlayerUi) {
+        this.insertPlayerUi = insertPlayerUi;
+    }
     public void setSelectTeamUi(SelectTeamUi selectTeamUi) {
         this.selectTeamUi = selectTeamUi;
     }
@@ -17,16 +21,19 @@ public class MenuUi extends AbstractUiTemplate{
         System.out.println(" ");
         System.out.println("1.종료");
         System.out.println("2.팀 전체 리스트");
+        System.out.println("3.선수 정보 추가");
         System.out.println(" ");
         System.out.println("번호를 입력하고 Ener를 눌러주십시오");
 
     }
 
-    @Override protected int getMaxMenuNumber() {
-        return 2;
+    @Override
+    protected int getMaxMenuNumber() {
+        return 3;
     }
 
-    @Override protected int getMinNumber() {
+    @Override
+    protected int getMinNumber() {
         return 1;
     }
 
@@ -40,6 +47,10 @@ public class MenuUi extends AbstractUiTemplate{
             case 2:
                 //2. 전체 리스트
                 this.selectTeamUi.show();
+                break;
+            case 3:
+                //2. 전체 리스트
+                this.insertPlayerUi.show();
                 break;
         }
     }
